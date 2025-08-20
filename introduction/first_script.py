@@ -5,7 +5,7 @@ dados = {
     'Idade': [28, 35, 22, 41, 30, None, 33, 29, 24, None],
     'Cidade': [
         'São Paulo', 'Rio de Janeiro', 'Curitiba', 'SALVADOR', 'Belo Horizonte',
-        'fortaleza', 'Brasília', 'Manaus', 'Recife', 'porto alegre'
+        'São Paulo', 'Brasília', 'Manaus', 'Recife', 'porto alegre'
     ]
 }
 
@@ -46,7 +46,7 @@ print(f'\nFiltro com mais condições: \n{filtro_com_mais_condicoes}')
 
 
 # ---------------------- MANIPULANDO OS DADOS ---------------------
-df['Estado'] = ['SP', 'RJ', 'PR', 'BA', 'RS', 'CE', 'DF', 'AM', 'PE', 'DF']
+df['Estado'] = ['SP', 'RJ', 'PR', 'BA', 'SP', 'CE', 'DF', 'AM', 'PE', 'DF']
 print(f'\nAdicionando coluna de estado: \n{df}')
 
 df['Idade'] = df['Idade'] + 1
@@ -93,7 +93,6 @@ print("\n3. Convertendo a coluna 'Idade' para o tipo inteiro...")
 df['Idade'] = df['Idade'].astype(int)
 
 
-# Criamos um mapeamento cidade -> estado para garantir a consistência lógica.
 mapa_estados = {
     'São Paulo': 'SP',
     'Rio De Janeiro': 'RJ',

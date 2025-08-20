@@ -1,4 +1,5 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 
 # Lê os dados do dataset
 dados = pd.read_csv('alunos.csv')
@@ -16,3 +17,23 @@ print(dados.head())
 
 total_aprovados = dados[dados['situacao'] == 'Aprovado'].shape[0]
 print("Alunos Aprovados: ", total_aprovados)
+
+
+# gerar um grafico de media por idade
+df_gourp_by_idade = dados.groupby('idade')['media'].mean()\
+    .plot(kind='bar')
+plt.title('Média por Idade dos Alunos')
+plt.xlabel('Jao')
+plt.ylabel('Maria')
+plt.show()
+
+
+df_group_aproveado = dados.groupby('situacao')['media'].mean()\
+    .plot(kind='bar')
+
+plt.title('Situaçõ por Idade dos Alunos')
+plt.xlabel('Jao')
+plt.ylabel('Maria')
+plt.show()
+
+#plt.show()
